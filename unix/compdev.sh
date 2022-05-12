@@ -79,11 +79,11 @@ then
 				case $module in
 					java_cup )
 						# add java_cup module into modules folder of the project
-						cp -r $config_path/java_cup ./modules/java_cup
+						cp -r $config_path/modules/java_cup ./modules/java_cup
 						echo -e "\nDone. Module $module has been added in modules/ folder!\n" ;;
 					jflex )
 						# add jflex module into modules folder of the project
-						cp -r $config_path/jflex ./modules/jflex
+						cp -r $config_path/modules/jflex ./modules/jflex
 						echo -e "\nDone. Module $module has been added in modules/ folder!\n" ;;
 					* )
 						# module passed is not found or it is not defined
@@ -124,8 +124,8 @@ then
 						mkdir $project/build $project/source $project/modules
 						cp -r $config_path/scanner.jflex $project/source/scanner.jflex
 						cp -r $config_path/parser.cup $project/source/parser.cup
-						cp -r $config_path/java_cup $project/modules/java_cup
-						cp -r $config_path/jflex $project/modules/jflex
+						cp -r $config_path/modules/java_cup $project/modules/java_cup
+						cp -r $config_path/modules/jflex $project/modules/jflex
 						cp $config_path/Makefile $project/Makefile
 						echo -e "\nDone. Your porject is now ready in $project/ folder!"
 						echo "and start to develop your compiler."
