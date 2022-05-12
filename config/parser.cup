@@ -1,0 +1,71 @@
+import java_cup.runtime.*;
+import java.io.*;
+
+parser code {:
+
+    public static int error_found = 0;
+
+    public static void main(String argv[]){
+        try {
+            Scanner l = new Scanner(new FileReader(argv[0]));
+            Parser p = new Parser(l);
+            Object result = p.parse().value;
+        } catch (NullPointerException e){
+            System.err.println("Syntax error");
+        } catch (FileNotFoundException e){
+            System.err.println("Error occurs opening file " + argv[0]);
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void report_error(String message, Object info){
+        System.err.print("\n\nERROR: Syntax error");
+        if (info instanceof Symbol)
+            if (((Symbol)info).left != -1){
+                int line = ((Symbol)info).left + 1;
+                int column = ((Symbol)info).right + 1;
+                System.err.println(" (row " + line + ", column " + column + ") : " + message);
+            } else System.err.println(": " + message);
+        else System.err.println(": " + message);
+    }
+
+    public void syntax_error(Symbol cur_token){}
+
+    public Symbol getToken(){
+        return ((Symbol)stack.elementAt(tos));
+    }
+:};
+
+action code {:
+    // your action code here
+:};
+
+//////////////////////////////////////
+// Terminal tokens
+//////////////////////////////////////
+
+// your terminal tokens here
+
+//////////////////////////////////////
+// Non terminal tokens
+//////////////////////////////////////
+
+non terminal prog;
+// your non terminal tokens here
+
+//////////////////////////////////////
+// Precedences and associativities
+//////////////////////////////////////
+
+// lower precedences
+
+// your precedences and associativities here
+
+// higher precedences
+
+//////////////////////////////////////
+// Grammar start
+//////////////////////////////////////
+
+start with prog;
