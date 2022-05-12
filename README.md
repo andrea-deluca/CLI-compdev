@@ -36,7 +36,7 @@ This is the tree chart of the project structure.
 
 ## How to install `CLI-compdev`
 
-Download CLI-compdev release from [here](), unzip the getted archive and follow the guide for your OS.
+Download CLI-compdev release from [here](https://github.com/andrea-deluca/CLI-compdev/releases), unzip the getted archive and follow the guide for your OS.
 
 ### On `MacOS`
 
@@ -84,7 +84,7 @@ sudo chmod 755 /usr/local/bin/COMPDEV
 
 ### On `Windows`
 
-Be sure you have [`WSL`]() installed on your PC before starting install `compdev`.
+Be sure you have [`WSL`](https://docs.microsoft.com/it-it/windows/wsl/install) installed on your PC before starting install `compdev`.
 
 Before starting, you can delete `unix` folder and `config/Makefile` file.
 
@@ -185,7 +185,7 @@ I would be very happy if you expanded this project.
 
 You can expand and edit `compdev` with whatever you want. You can add new modules and new templates by means editing source code and you can also suggest optimizations or prettier code.
 
-In addition, I also suggest you to watch [issues]().
+In addition, I also suggest you to watch [issues](https://github.com/andrea-deluca/CLI-compdev/issues).
 
 I know this program is not perfect but I think it can be a good starting point, so you are welcome!
 
